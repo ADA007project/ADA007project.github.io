@@ -1,7 +1,227 @@
+<!DOCTYPE HTML>
 <html>
-<head>
-</head>
-<body>
-<h1> ADA007 project website </h1>
-</body>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Health Product Data story --ADA007</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Data Story of team ADA007" />
+	<meta name="keywords" content="Amazon Health Product Data Analysis " />
+	<meta name="author" content="Yueran Liang, Yaxiong Luo, Shengzhao Xia" />
+
+	
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Material Design Bootstrap -->
+	<!-- <link rel="stylesheet" href="css/mdb.min.css" > -->
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+		<div id="fh5co-aside" >
+			<div class="overlay"></div>
+			<nav role="navigation">
+				<ul>
+					<li><a href="index.html"><i class="icon-home"></i></a></li>
+					<li><a href="#Introduction">Introduction</a></li>
+					<li><a href="#exploration">Dataset exploration</a></li>
+					<li><a href="trend">The trend of Popularity</a>
+						<ul>
+							<li class="nav2nd"><a href="#quantity">Review quantity grow</a></li>
+							<li class="nav2nd"><a href="#sentiment">Sentiment analysis and keyword</a></li>
+							<li class="nav2nd"><a href="#seasonal">Seasonal and special day</a></li>
+						</ul>
+						
+						
+					</li>
+				</ul>
+			</nav>
+			<div class="featured">
+				<span>Bio</span>
+				<h2>How people view health care products？</h2>
+			</div>
+		</div>
+		<div id="fh5co-main-content">
+			<div class="fh5co-post"> 
+				<div class="fh5co-entry padding " id="Introduction">
+					<!-- <img src="images/project-1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"> -->
+					<div>
+						<h2>Introduction</h2>
+						<div class="story-content">
+							<p>
+									Public health is a non-negligible topic when people mention social improvement and individual health, as the integral part of public health, is something unavoidable to everybody. For keeping health, some people prefer traditional physical exercising, while others are more willing to try auxiliary health care products, such as nutrition food and healthcare medicine. 
+							</p>
+							<p>
+									“Are they effective? Do they have any side effect?”, it seems that people’s answers can be different and controversial. User reviews on Amazon.com are an informative source of interesting insight into people’s attitude to health care products. In this project, we decided to take a look into reviews of health care products on Amazon over a period of time, to find answers to questions that interest us: 
+									
+							</p>
+							<p style="font-weight: 800">How people view health care products?</p>
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="fh5co-entry padding" id="exploration">
+					<div>
+						<h2>Dataset exploration</h2>
+						<div class="story-content"> 
+							<p>
+								The dataset we use is Amazon product data [1], which contains 142.8 million Amazon product reviews and metadata from May 1996 to July 2014. In this project, we will precisely focus on the Health and Personal Care subset to give some insights and our unique understandings of reviews.
+								The Health and Personal Care subset contains about 3,000,000 reviews, and an example review looks like:
+							</p>
+						
+							<!-- <span id="data_description">
+								"reviewerID": " A2J0WRZSAAHUAP",
+								"asin": "0615269990",
+								"reviewText": " Very helpful in learning about different disease processes and easy to understand. You do not have to be a med student to play. Also you can play alone or with several players."
+								"overall": 5.0,
+								"unixReviewTime": 1396742400,
+							   http://jmcauley.ucsd.edu/data/amazon/
+							</span> -->
+							 
+							<p>
+								First, let’s see how reviews grades are distributed among Health and Personal Care products and observe the overall characteristics.
+							</p>
+							<!-- <img id="img1">
+							<img id="img2"> -->
+							<p>
+								Keywords in adjectives and bigrams do give us a general impression of consumers’ sentiment in reviews. We can see that in key words of adjectives, positive words such as 'good', 'great', 'nice', have a pretty high probability. Although negative words such as 'bad', 'old' also occupy a high probability, they are obviously lower. Roughly, we can say reviews on health care products in these years are mainly positive!
+							</p>
+							<p>
+								Then we do a further and detailed sentiment analysis utilizing VADER package, which can give us a quantitative compound score of sentiment. 
+							</p>
+							<!-- <img id="img3">
+							<img id="img4"> -->
+							<p>
+								According to the definition of the compound score, the review can be regarded as positive if its score is larger than 0.05 or negative if the score is below -0.05, otherwise, the review is considered as neutral. From the figure above, we can get a consistent conclusion as before: Most reviews are positive, while a relatively smaller amount of reviews is negative and only a few are neutral.
+							</p>
+							<p>
+								To see whether there is a difference between a rating and its associated review’s sentiment, we scale the sentiment score to the same [-5, +5] range as rating and visualize the difference among each sub-category of Health Care products:		
+							</p>
+							<!-- <img id="img5"> -->
+							<p>
+								It is clearly seen that sexual wellness products have the most positive difference in all sub-categories, which means people think much more positively in reviews than the rating. By contrast, the difference between sentiment score and rating of Vitamins & Dietary Supplements is most negative indicating that people are actually not satisfied as they rate. Then let’s put our attention to more detailed level—the products.
+							</p>
+							<!-- <img id="img6"> -->
+							<p>
+								From the distribution of difference among each product, we can see that most of the mass of it is concentrated between 0 and -1, which shows a pretty consistent phenomenon as above: Consumers tend to give a higher rating than they actually think.
+							</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="fh5co-entry padding" id="trend">
+					<div>
+						<h2>The trend of Popularity</h2>
+						
+						<div class="story-content">
+							<h3 id="quantity">Review quantity grow</h3>
+							<p>
+								Popularity is the state or condition of being liked, admired, or supported by many people. The popularity of one product is apparently related to the number of its sales, which is, unfortunately, different from the number of reviews. However, we can intuitively suppose that the number of sales and reviews have a positive correlation, which means the more one product is sold, more reviews it will get. Therefore, to some extent, we can say that the amount of reviews indeed reflects the popularity of products among people.
+							</p>
+							<p>
+								We visualize the trend of reviews amount of Health Care products per day from 2005 to 2013 as below.
+							</p>
+							<!-- <img id="img7"> -->
+							<h3 id="sentiment">Sentiment analysis and keyword</h3>
+							<p>
+								However, we will encounter similar problems as we mentioned before: The amount of reviews is only a numerical count which cannot reflect sentiment orientation of the popularity of the product. To get into the depth of trend of popularity, here we analyze the change of sentiment in reviews over years.
+							</p>
+							<!-- <img id="img8">
+							<img id="img9"> -->
+							<p>
+								From the year 2010 to 2013, the top 10 keywords of Health Care products in adjectives remain quite stable, in which positive words 'good' and 'great' are dominant and have a much higher probability than the negative word 'bad'. Similarly for bigrams, 'highly recommend', which can naturally be regarded as a positive bigram, always has the highest frequency. So, roughly, we can say that health care products always have a positive evaluation in general and keep popular over these years. 
+							</p>
+							<p>
+								What’s more, we find a phenomenon that 'heart rate' occurs frequently from 2010 to 2011, however, it disappears from top 10 key bigrams and is replaced by 'lose weight' after 2012. Interesting! It seems that people pay more attention to their appearance than before and they are more willing to buy health care products to build a slim figure.
+							</p>
+							<!-- <img id="img10"> -->
+							<p>
+								Apparently, the trend of sentiment score of Health Care products fluctuates remarkably in the first several years, which indicates that the people’s evaluation and attitude to Health Care products are various and unstable during this period. After 2005, the score becomes gradually stable and fluctuates around 4, which may be explained that people are more likely to think that Health Care products are generally good but with some small shortcomings.
+							</p>
+							<h3 id="seasonal">Seasonal and special day</h3>
+							<p>
+								Will the popularity of Health Care products be influenced by some specific date? To answer this question, let’s look at the time series decomposition of the data, which decomposes the data into a trend component, a seasonal component and a residual (noise component). Since the amount of reviews is too small before 2004 and the dataset seems not to contain the whole sales data in 2014, we only treat the 2004-2013 interval.
+							</p>
+							<!-- <img id="img11"> -->
+							<p>
+								We can observe that there is a seasonal changing pattern of the number of reviews under the yearly growth. The seasonal component starts to grow from November, reaches its peaks around January and then drops, which is, surprisingly, in the Christmas season! It can be seen that special date, especially Christmas, does have an impact on the popularity of Health Care products. We infer that people tend to buy more Health Care products and send them as gifts, which significantly boost consumption. While after Christmas, the need for health care products gradually falls back.
+							</p>
+							<p>
+								So how does the Christmas season influence the popularity in detail? Let’s go into the deep analysis of Christmas season and see if there is any difference among review quantity, rating, key words and sentiment score compared to values of whole year.
+							</p>
+							<!-- <img id="img12"> -->
+							<p>
+								For review quantity of Christmas season, we notice that after 2009, the number of reviews in Christmas season starts to be larger than year’s day average review number and the gap between them is becoming more and more huge as year goes by. We suppose it might because after 2009, with the invention and wide use of smartphones, people are handier to buy products in Amazon using their phones. Another reason might be that the price of Health Care products is always much cheaper online. Especially on Christmas Day, online stores may offer a really excellent discount and significantly boost the sales. Also, in order to celebrate Christmas, the most important day in the year, people may be willing to consume more Health Care product like nutritious food.
+							</p>
+							<!-- <img id="img13"> -->
+							<p>
+								The line chart above compares the trend of average rating in Christmas season with that in whole year. During 2004-2009, the average rating in Christmas day fluctuate remarkably, which indicates that people in these year’s Christmas Day take a skeptical attitude toward the healthy product. Sometimes they give a high rating, while sometimes low. However, after 2009, they are more likely to give a good rating for Health Care product on Christmas Day, which probably because the quality of the products are improved under Amazon’s strong supervision.
+							</p>
+							<!-- <img id="img14">	 -->
+						</div>
+						
+					</div>
+				</div>
+				<footer>
+					<div>
+					&copy; 2018 Health & Care Product Analysis <a href="https://github.com/epfl-ada-2018/ada007project" target="_blank" title="ADA007">--ADA007</a> 
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
 </html>
+
