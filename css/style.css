@@ -486,6 +486,15 @@ footer {
   position: relative;
   z-index: 999;
 }
+.overyear_cloud img{
+  display: inline;
+}
+#img3{
+  width:45%;
+}
+#img4{
+  width:53%
+}
 .single #fh5co-main-content {
   margin-left: 0;
   max-width: 960px;

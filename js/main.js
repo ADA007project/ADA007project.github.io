@@ -167,6 +167,25 @@
 		};
 		return fig9_points;
 	}
+	function addData12(data) {
+		var fig12_points = [];
+		var yearmonth=[]
+		var score=[]
+		$.each( data[0].Yearmonth, function( key, val ) {
+			yearmonth.push(new Date(val));
+		});
+		$.each( data[0].reviewScoreNorm, function( key, val ) {
+			score.push(val);
+		});
+		for (var i = 0; i < yearmonth.length; i++) {
+			fig12_points.push({
+				x: yearmonth[i],
+				y: score[i]
+			});
+		
+		};
+		return fig12_points;
+	}
 	function addData_x_13(x_data){
 		var data_x=[]
 		$.each( x_data[0].ReviewTime, function( key, val ) {
@@ -452,6 +471,30 @@
 		}
 		$("#Figure7").CanvasJSChart(options_fig7);
 
+		// draw figure8
+		var fig8_points = addData2(diff_cat)
+		var options_fig8 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Difference of rating and normalized score among each Health Care product"
+			},
+			axisX: {
+				title:"review score",
+				titleFontSize: 12,
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 12,
+				includeZero: false
+			},
+			data: [{
+				type: "column", 
+				dataPoints: fig8_points
+			}]
+		};
+		$("#Figure8").CanvasJSChart(options_fig8);
+
 		// draw figure9
 		var fig9_points = addData9(rating_quantity_month)
 		var options_fig9 =  {
@@ -477,6 +520,30 @@
 		};
 		$("#Figure9").CanvasJSChart(options_fig9);
 
+		// draw figure12
+		var fig12_points = addData12(score_month)
+		var options_fig12 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Sentiment score over years（per month）"
+			},
+			axisX: {
+				title:"score",
+				titleFontSize: 12,
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 12,
+				includeZero: false
+			},
+			data: [{
+				type: "spline", 
+				xValueType: "dateTime",
+				dataPoints: fig12_points
+			}]
+		};
+		$("#Figure12").CanvasJSChart(options_fig12);
 		// draw graph 13
 		var data_x_13 = addData_x_13(seasonal_x)
 		var fig13_points_1 = addData13(observed_13,data_x_13)
