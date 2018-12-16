@@ -486,14 +486,17 @@ footer {
   position: relative;
   z-index: 999;
 }
-.overyear_cloud img{
+/* .overyear_cloud img{
   display: inline;
-}
+} */
 #img3{
-  width:45%;
+  width:94%;
 }
 #img4{
-  width:53%
+  width:109%
+}
+.align-img{
+  text-align:center;
 }
 .align-img div{
   width:100%;
@@ -510,6 +513,18 @@ footer {
 }
 .graph-margin{
   margin-top:10px;
+}
+.align_cloud{
+  display: inline-block;
+  width:48%;
+  text-align: center;
+}
+.title_cloud{
+  width:100%;
+  font-size:15px;
+  font-weight:600;
+  font-family: "Candara";
+  text-align: center;
 }
 .single #fh5co-main-content {
   margin-left: 0;
