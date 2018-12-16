@@ -308,7 +308,7 @@
 		$("#Figure5").CanvasJSChart(options_fig5);
 
 		// draw figure6
-		var fig6_points = addData2(general_score)
+		var fig6_points = addData2(average_score)
 		var options_fig6 =  {
 			animationEnabled: true,
 			theme: "light2",
