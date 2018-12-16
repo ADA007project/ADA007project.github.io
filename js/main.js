@@ -265,7 +265,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Average rating Distribution",
+				text: "Average Rating Distribution",
 				fontSize:20
 			},
 			axisX: {
@@ -316,7 +316,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Average Sentiment Score for products Distribution",
+				text: "Average Sentiment Score for Products Distribution",
 				fontSize:20
 			},
 			axisX: {
@@ -340,7 +340,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Difference of rating and normalized score among each sub-category",
+				text: "Difference of Rating and Normalized Score among Each Sub-category",
 				fontSize:20
 			},
 			axisX:{
@@ -482,7 +482,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Difference of rating and normalized score among each Health Care product",
+				text: "Difference of Rating and Normalized Score among Each Health Care Product",
 				fontSize:20
 			},
 			axisX: {
@@ -533,7 +533,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Sentiment score over years（per month）",
+				text: "Sentiment Score Over Years（Per Month）",
 				fontSize:20
 			},
 			axisX: {
@@ -685,7 +685,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Christmas quantity average",
+				text: "Christmas Quantity Average",
 				fontSize:20
 			},
 			axisX:{
@@ -711,7 +711,7 @@
 			data: [{
 				type: "line",
 				showInLegend: true,
-				name: "Christmas reviews quantity",
+				name: "Christmas Reviews Quantity",
 				markerType: "square",
 				color: "#F08080",
 				dataPoints: fig14_points_1
@@ -735,7 +735,7 @@
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Christmas rating average",
+				text: "Christmas Rating Average",
 				fontSize:20
 			},
 			axisX:{
@@ -753,7 +753,7 @@
 			},  
 			legend:{
 				cursor:"pointer",
-				verticalAlign: "bottom",
+				verticalAlign: "top",
 				horizontalAlign: "left",
 				dockInsidePlotArea: true,
 				itemclick: toogleDataSeries
@@ -761,7 +761,7 @@
 			data: [{
 				type: "line",
 				showInLegend: true,
-				name: "Christmas reviews rating",
+				name: "Christmas Reviews Rating",
 				markerType: "square",
 				color: "#F08080",
 				dataPoints: fig15_points_1
