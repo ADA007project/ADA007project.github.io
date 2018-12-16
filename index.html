@@ -62,9 +62,10 @@
 					<li><a href="#exploration">Dataset exploration</a></li>
 					<li><a href="#trend">The trend of Popularity</a>
 						<ul>
-							<li class="nav2nd"><a href="#quantity">Review quantity grow</a></li>
-							<li class="nav2nd"><a href="#sentiment">Sentiment analysis and keyword</a></li>
-							<li class="nav2nd"><a href="#seasonal">Seasonal and special day</a></li>
+							<li class="nav2nd"><a href="#quantity">Review quantity growth
+							</a></li>
+							<li class="nav2nd"><a href="#sentiment">Trend of sentiment and key words</a></li>
+							<li class="nav2nd"><a href="#seasonal">Seasonal decomposition and special day</a></li>
 						</ul>
 						
 						
@@ -98,7 +99,7 @@
 						<h2>Dataset exploration</h2>
 						<div class="story-content"> 
 							<p>
-								The dataset we use is Amazon product data [1], which contains 142.8 million Amazon product reviews and metadata from May 1996 to July 2014. In this project, we will precisely focus on the Health and Personal Care subset to give some insights and our unique understandings of reviews.
+								The dataset we use is <a href="http://jmcauley.ucsd.edu/data/amazon/">Amazon product data</a>, which contains 142.8 million Amazon product reviews and metadata from May 1996 to July 2014. In this project, we will precisely focus on the Health and Personal Care subset to give some insights and our unique understandings of reviews.
 								The Health and Personal Care subset contains about 3,000,000 reviews.
 							</p>
 						
@@ -143,15 +144,15 @@
 								According to the definition of the compound score, the review can be regarded as positive if its score is larger than 0.05 or negative if the score is below -0.05, otherwise, the review is considered as neutral. From the figure above, we can get a consistent conclusion as before: Most reviews are positive, while a relatively smaller amount of reviews is negative and only a few are neutral.
 							</p>
 							<p>
-								To see whether there is a difference between a rating and its associated review’s sentiment, we scale the sentiment score to the same [-5, +5] range as rating and visualize the difference among each sub-category of Health Care products:		
+								To see whether there is a difference between a rating and its associated review’s sentiment, we scale the sentiment score to the same [1, 5] range as rating and visualize the difference among each sub-category of Health Care products:		
 							</p>
 							<div id="Figure7" style="height: 400px; width: 100%;"></div>
 							<p>
-								It is clearly seen that sexual wellness products have the most positive difference in all sub-categories, which means people think much more positively in reviews than the rating. By contrast, the difference between sentiment score and rating of Vitamins & Dietary Supplements is most negative indicating that people are actually not satisfied as they rate. Then let’s put our attention to more detailed level—the products.
+								It is clearly seen that sexual wellness products have the most positive difference in all sub-categories, which means people think much more positively in reviews than the rating. By contrast, the difference between sentiment score and rating of Vitamins & Dietary Supplements and Health & Care are the most 2 negative with similar values indicating that people are actually not satisfied as they rate. Then let’s put our attention to more detailed level—the products.
 							</p>
 							<div id="Figure8" style="height: 300px; width: 100%;"></div>
 							<p>
-								From the distribution of difference among each product, we can see that most of the mass of it is concentrated between 0 and -1, which shows a pretty consistent phenomenon as above: Consumers tend to give a higher rating than they actually think.
+								From the distribution of difference among each product, we can see that most of the mass of it is concentrated between -1 and 0, which shows a pretty consistent phenomenon as above: Consumers tend to give a higher rating than they actually think.
 							</p>
 
 						</div>
@@ -163,7 +164,7 @@
 						<h2>The trend of Popularity</h2>
 						
 						<div class="story-content">
-							<h3 id="quantity">Review quantity grow</h3>
+							<h3 id="quantity">Review quantity growth</h3>
 							<p>
 								Popularity is the state or condition of being liked, admired, or supported by many people. The popularity of one product is apparently related to the number of its sales, which is, unfortunately, different from the number of reviews. However, we can intuitively suppose that the number of sales and reviews have a positive correlation, which means the more one product is sold, more reviews it will get. Therefore, to some extent, we can say that the amount of reviews indeed reflects the popularity of products among people.
 							</p>
@@ -171,12 +172,16 @@
 								We visualize the trend of reviews amount of Health Care products per day from 2005 to 2013 as below.
 							</p>
 							<div id="Figure9" style="height: 300px; width: 100%;"></div>
-							<h3 id="sentiment">Sentiment analysis and keyword</h3>
+							<h3 id="sentiment">Trend of sentiment and key words</h3>
 							<p>
 								However, we will encounter similar problems as we mentioned before: The amount of reviews is only a numerical count which cannot reflect sentiment orientation of the popularity of the product. To get into the depth of trend of popularity, here we analyze the change of sentiment in reviews over years.
 							</p>
-							<img id="img10" width="100%" alt="Figure10_Word cloud of adjectives over years" src="images/Figure10_Word cloud of adjectives over years.png">
-							<img id="img11" width="100%" alt="Figure11_Word cloud of bigrams over years" src="images/Figure11_Word cloud of bigrams over years.png">
+							<div class="align-img">
+								<div id="title_img10">Trend of adjectives over years</div>
+								<img id="img10" width="93%" alt="Figure10_Word cloud of adjectives over years" src="images/Figure10_Word cloud of adjectives over years.png">
+								<div id="title_img11">Trend of bigrams over years</div>
+								<img id="img11" width="105%" alt="Figure11_Word cloud of bigrams over years" src="images/Figure11_Word cloud of bigrams over years.png">
+							</div>
 							<p>
 								From the year 2010 to 2013, the top 10 keywords of Health Care products in adjectives remain quite stable, in which positive words 'good' and 'great' are dominant and have a much higher probability than the negative word 'bad'. Similarly for bigrams, 'highly recommend', which can naturally be regarded as a positive bigram, always has the highest frequency. So, roughly, we can say that health care products always have a positive evaluation in general and keep popular over these years. 
 							</p>
@@ -185,9 +190,9 @@
 							</p>
 							<div id="Figure12" style="height: 300px; width: 100%;"></div>
 							<p>
-								Apparently, the trend of sentiment score of Health Care products fluctuates remarkably in the first several years, which indicates that the people’s evaluation and attitude to Health Care products are various and unstable during this period. After 2005, the score becomes gradually stable and fluctuates around 4, which may be explained that people are more likely to think that Health Care products are generally good but with some small shortcomings.
+								Apparently, the score of Health & Personal Care products keep fluctuating violently in the previous several years, which may indicates that the people’s evaluation and attitude to Health Care products were various and unstable during this period. In addition, the sharp drop is clear to be seen in the late 2004. The remarkable fluctuation can still be seen during period from 2005 to 2009. After that, the fluctuation becomes slighter and it seems to go down below 4 during year 2013 and then keep fluctuating up and down within the smaller range from 3.95 to 4, which may be explained that people are more likely to think that Health Care products are generally good but with some small shortcomings.
 							</p>
-							<h3 id="seasonal">Seasonal and special day</h3>
+							<h3 id="seasonal">Seasonal decomposition and special day</h3>
 							<p>
 								Will the popularity of Health Care products be influenced by some specific date? To answer this question, let’s look at the time series decomposition of the data, which decomposes the data into a trend component, a seasonal component and a residual (noise component). Since the amount of reviews is too small before 2004 and the dataset seems not to contain the whole sales data in 2014, we only treat the 2004-2013 interval.
 							</p>

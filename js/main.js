@@ -240,14 +240,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Rating Quantity"
+				text: "Rating Quantity",
+				fontSize:20
 			},
 			axisX: {
-				title:"rating",
+				title:"Rating",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: true
 			},
@@ -264,14 +265,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Average rating Distribution"
+				text: "Average rating Distribution",
+				fontSize:20
 			},
 			axisX: {
 				title:"Average Rating",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: true
 			},
@@ -289,14 +291,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "General Sentiment Score Distribution"
+				text: "General Sentiment Score Distribution",
+				fontSize:20
 			},
 			axisX: {
 				title:"Sentiment Score",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: true
 			},
@@ -313,14 +316,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Average Sentiment Score for products Distribution"
+				text: "Average Sentiment Score for products Distribution",
+				fontSize:20
 			},
 			axisX: {
 				title:"Sentiment Score",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: true
 			},
@@ -336,14 +340,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Difference of rating and normalized score among each sub-category"
+				text: "Difference of rating and normalized score among each sub-category",
+				fontSize:20
 			},
 			axisX:{
-				title:"scoretype",
+				title:"Score Type",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "score",
+				title: "Score",
 				titleFontSize: 12,
 				includeZero: false
 			},
@@ -372,7 +377,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Stationery & Party Supplies",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#339CC1",
 				dataPoints: [
 					{ label: "rating", y: 4.1025681927 },
@@ -383,7 +388,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Sports Nutrition",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#8FBD45",
 				dataPoints: [
 					{ label: "rating", y: 4.2376497665 },
@@ -394,7 +399,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Personal Care",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#6C28C3",
 				dataPoints: [
 					{ label: "rating", y: 4.1025089296},
@@ -405,7 +410,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Household Supplies",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#ECAD5C",
 				dataPoints: [
 					{ label: "rating", y: 4.1924941364},
@@ -416,7 +421,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "default",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#C6EAF8",
 				dataPoints: [
 					{ label: "rating", y: 4.0190772708},
@@ -427,7 +432,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Sexual Wellness",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#062C3B",
 				dataPoints: [
 					{ label: "rating", y: 3.6948595705},
@@ -438,7 +443,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Medical Supplies & Equipment",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#CD176F",
 				dataPoints: [
 					{ label: "rating", y: 4.0719347174},
@@ -449,7 +454,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Health Care",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#F02030",
 				dataPoints: [
 					{ label: "rating", y: 4.1270087484},
@@ -460,7 +465,7 @@
 				type: "line",
 				showInLegend: true,
 				name: "Vitamins & Dietary Supplements",
-				lineDashType: "square",
+				markerType: "square",
 				color: "#F07F20",
 				dataPoints: [
 					{ label: "rating", y: 4.123548889},
@@ -477,14 +482,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Difference of rating and normalized score among each Health Care product"
+				text: "Difference of rating and normalized score among each Health Care product",
+				fontSize:20
 			},
 			axisX: {
-				title:"review score",
+				title:"Review Score",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: false
 			},
@@ -501,14 +507,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "review_quantity_through_months"
+				text: "Review Quantity Through Months",
+				fontSize:20
 			},
 			axisX: {
-				title:"rating",
+				title:"Rating",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: false
 			},
@@ -526,14 +533,15 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Sentiment score over years（per month）"
+				text: "Sentiment score over years（per month）",
+				fontSize:20
 			},
 			axisX: {
-				title:"score",
+				title:"Score",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "counts",
+				title: "Counts",
 				titleFontSize: 12,
 				includeZero: false
 			},
@@ -557,7 +565,8 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Seasonal Decomposition -Original Time Series Figure"
+				text: "Seasonal Decomposition -Original Time Series Figure",
+				fontSize:20
 			},
 			axisX: {
 				title:"Year",
@@ -585,7 +594,8 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Seasonal Decomposition -Trend Component Figure"
+				text: "Seasonal Decomposition -Trend Component Figure",
+				fontSize:20
 			},
 			axisX: {
 				title:"Year",
@@ -613,7 +623,8 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Seasonal Decomposition -Seasonal Component Figure"
+				text: "Seasonal Decomposition -Seasonal Component Figure",
+				fontSize:20
 			},
 			axisX: {
 				title:"Year",
@@ -642,7 +653,8 @@
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Seasonal Decomposition -Seasonal Component Figure"
+				text: "Seasonal Decomposition -Seasonal Component Figure",
+				fontSize:20
 			},
 			axisX: {
 				title:"Year",
@@ -673,15 +685,16 @@
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Christmas quantity average"
+				text: "Christmas quantity average",
+				fontSize:20
 			},
 			axisX:{
-				title:"year",
+				title:"Year",
 				valueFormatString:"####",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "quantity",
+				title: "Quantity",
 				titleFontSize: 12,
 				includeZero: true
 			},
@@ -722,15 +735,16 @@
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Christmas rating average"
+				text: "Christmas rating average",
+				fontSize:20
 			},
 			axisX:{
-				title:"year",
+				title:"Year",
 				valueFormatString:"####",
 				titleFontSize: 12,
 			},
 			axisY: {
-				title: "rating",
+				title: "Rating",
 				titleFontSize: 12,
 				includeZero: false
 			},

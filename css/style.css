@@ -495,6 +495,17 @@ footer {
 #img4{
   width:53%
 }
+.align-img div{
+  width:100%;
+  font-size:20px;
+  font-weight:800;
+  text-align: center;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.align-img img{
+  margin-top:10px;
+}
 .single #fh5co-main-content {
   margin-left: 0;
   max-width: 960px;
