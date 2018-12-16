@@ -129,6 +129,25 @@
 		});
 		return fig1_points;
 	}
+	// distribution data !
+	function addData2(data) {
+		var fig2_points = [];
+		var height=[]
+		var interval=[]
+		$.each( data[0].height, function( key, val ) {
+			height.push(val);
+		});
+		$.each( data[0].interval, function( key, val ) {
+			interval.push("("+val+")");
+		});
+		for (var i = 0; i < interval.length; i++) {
+			fig2_points.push({
+				label: interval[i],
+				y: height[i]
+			});
+		};
+		return fig2_points;
+	}
 	function addData9(data) {
 		var fig9_points = [];
 		var reviewtime=[]
@@ -205,7 +224,8 @@
 				text: "Rating Quantity"
 			},
 			axisX: {
-				title:"rating"
+				title:"rating",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "counts",
@@ -218,6 +238,80 @@
 			}]
 		};
 		$("#Figure1").CanvasJSChart(options_fig1);
+
+		// draw figure2
+		var fig2_points = addData2(rating_dist)
+		var options_fig2 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Average rating Distribution"
+			},
+			axisX: {
+				title:"Average Rating",
+				titleFontSize: 12,
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 12,
+				includeZero: true
+			},
+			data: [{
+				type: "column", 
+				dataPoints: fig2_points
+			}]
+		};
+
+		$("#Figure2").CanvasJSChart(options_fig2);
+
+		// draw figure5
+		var fig5_points = addData2(general_score)
+		var options_fig5 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "General Sentiment Score Distribution"
+			},
+			axisX: {
+				title:"Sentiment Score",
+				titleFontSize: 12,
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 12,
+				includeZero: true
+			},
+			data: [{
+				type: "column", 
+				dataPoints: fig5_points
+			}]
+		};
+		$("#Figure5").CanvasJSChart(options_fig5);
+
+		// draw figure6
+		var fig6_points = addData2(general_score)
+		var options_fig6 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Average Sentiment Score for products Distribution"
+			},
+			axisX: {
+				title:"Sentiment Score",
+				titleFontSize: 12,
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 12,
+				includeZero: true
+			},
+			data: [{
+				type: "column", 
+				dataPoints: fig6_points
+			}]
+		};
+		$("#Figure6").CanvasJSChart(options_fig6);
+
 		// draw figure9
 		var fig9_points = addData9(rating_quantity_month)
 		var options_fig9 =  {
@@ -227,7 +321,8 @@
 				text: "review_quantity_through_months"
 			},
 			axisX: {
-				title:"rating"
+				title:"rating",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "counts",
@@ -258,7 +353,8 @@
 				text: "Seasonal Decomposition -Original Time Series Figure"
 			},
 			axisX: {
-				title:"Year"
+				title:"Year",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "Original",
@@ -285,7 +381,8 @@
 				text: "Seasonal Decomposition -Trend Component Figure"
 			},
 			axisX: {
-				title:"Year"
+				title:"Year",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "Trend",
@@ -312,7 +409,8 @@
 				text: "Seasonal Decomposition -Seasonal Component Figure"
 			},
 			axisX: {
-				title:"Year"
+				title:"Year",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "Seasonal",
@@ -340,7 +438,8 @@
 				text: "Seasonal Decomposition -Seasonal Component Figure"
 			},
 			axisX: {
-				title:"Year"
+				title:"Year",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "Residual",
@@ -371,7 +470,8 @@
 			},
 			axisX:{
 				title:"year",
-				valueFormatString:"####"
+				valueFormatString:"####",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "quantity",
@@ -419,7 +519,8 @@
 			},
 			axisX:{
 				title:"year",
-				valueFormatString:"####"
+				valueFormatString:"####",
+				titleFontSize: 12,
 			},
 			axisY: {
 				title: "rating",
