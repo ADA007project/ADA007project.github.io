@@ -59,7 +59,14 @@
 				<ul>
 					<li><a href="index.html"><i class="icon-home"></i></a></li>
 					<li><a href="#Introduction">Introduction</a></li>
-					<li><a href="#exploration">Dataset exploration</a></li>
+					<li><a href="#exploration">Dataset exploration</a>
+						<ul>
+								<li class="nav2nd"><a href="#distribution">Rating distribution
+								</a></li>
+								<li class="nav2nd"><a href="#keywords">Key words and sentiment of all reviews</a></li>
+								
+						</ul>
+					</li>
 					<li><a href="#trend">The trend of Popularity</a>
 						<ul>
 							<li class="nav2nd"><a href="#quantity">Review quantity growth
@@ -111,7 +118,7 @@
 								"unixReviewTime": 1396742400,
 							   http://jmcauley.ucsd.edu/data/amazon/
 							</span> -->
-							 
+							<h3 id="distribution">Rating distribution</h3>
 							<p>
 								First, let’s see how reviews grades are distributed among Health and Personal Care products and observe the overall characteristics.
 							</p>
@@ -123,6 +130,7 @@
 							<p>
 								Do these distributions of review ratings really represent product quality or consumer satisfaction? Yes, to some extent, they do. However, they do not reflect how positively or negatively people write their reviews. In order to see positiveness and negativeness of reviews, we do sentiment analysis and measure the sentiment in the review text.
 							</p>
+							<h3 id="keywords">Key words and sentiment of all reviews</h3>
 							<p>
 								Before diving into the numerical analysis of sentiment, let’s have a look at the keywords of reviews to have an intuitive impression of sentiment in reviews first. Here we use frequency of words in reviews to represent the keyness and focus on the most emotionally representative parts in reviews –– adjectives and bigrams.
 							</p>
