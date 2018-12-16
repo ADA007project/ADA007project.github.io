@@ -497,13 +497,17 @@ footer {
 }
 .align-img div{
   width:100%;
-  font-size:20px;
-  font-weight:800;
+  font-size:23px;
+  font-weight:600;
+  font-family: "Candara";
   text-align: center;
   margin-top:10px;
   margin-bottom: 10px;
 }
 .align-img img{
+  margin-top:10px;
+}
+.graph-margin{
   margin-top:10px;
 }
 .single #fh5co-main-content {

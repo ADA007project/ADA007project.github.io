@@ -115,8 +115,8 @@
 							<p>
 								First, let’s see how reviews grades are distributed among Health and Personal Care products and observe the overall characteristics.
 							</p>
-							<div id="Figure1" style="height: 300px; width: 100%;"></div>
-							<div id="Figure2" style="height: 300px; width: 100%;"></div>
+							<div id="Figure1" class="graph-margin" style="height: 300px; width: 100%;"></div>
+							<div id="Figure2" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<p>
 								From these two figures, we can apparently see that the number of high rating products or reviews is significantly greater than it of low rating, which means consumers tend to give high ratings to products rather than low ratings. 
 							</p>
@@ -126,7 +126,7 @@
 							<p>
 								Before diving into the numerical analysis of sentiment, let’s have a look at the keywords of reviews to have an intuitive impression of sentiment in reviews first. Here we use frequency of words in reviews to represent the keyness and focus on the most emotionally representative parts in reviews –– adjectives and bigrams.
 							</p>
-							<div width="100%" class="overyear_cloud">
+							<div width="100%" class="graph-margin overyear_cloud">
 								<img id="img3" alt="Figure3_Word cloud of POS in all years" src="images/Figure3_Word_cloud_of_POS_in_all_years.jpg">
 								<img id="img4" alt="Word cloud of bigrams in all years" src="images/Figure4_Word cloud of bigrams in all years.png">
 							</div>
@@ -138,19 +138,19 @@
 								Then we do a further and detailed sentiment analysis utilizing VADER package, which can give us a quantitative compound score of sentiment. 
 							</p>
 							
-							<div id="Figure5" style="height: 300px; width: 100%;"></div>
-							<div id="Figure6" style="height: 300px; width: 100%;"></div>
+							<div id="Figure5" class="graph-margin" style="height: 300px; width: 100%;"></div>
+							<div id="Figure6" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<p>
 								According to the definition of the compound score, the review can be regarded as positive if its score is larger than 0.05 or negative if the score is below -0.05, otherwise, the review is considered as neutral. From the figure above, we can get a consistent conclusion as before: Most reviews are positive, while a relatively smaller amount of reviews is negative and only a few are neutral.
 							</p>
 							<p>
 								To see whether there is a difference between a rating and its associated review’s sentiment, we scale the sentiment score to the same [1, 5] range as rating and visualize the difference among each sub-category of Health Care products:		
 							</p>
-							<div id="Figure7" style="height: 400px; width: 100%;"></div>
+							<div id="Figure7" class="graph-margin" style="height: 400px; width: 100%;"></div>
 							<p>
 								It is clearly seen that sexual wellness products have the most positive difference in all sub-categories, which means people think much more positively in reviews than the rating. By contrast, the difference between sentiment score and rating of Vitamins & Dietary Supplements and Health & Care are the most 2 negative with similar values indicating that people are actually not satisfied as they rate. Then let’s put our attention to more detailed level—the products.
 							</p>
-							<div id="Figure8" style="height: 300px; width: 100%;"></div>
+							<div id="Figure8" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<p>
 								From the distribution of difference among each product, we can see that most of the mass of it is concentrated between -1 and 0, which shows a pretty consistent phenomenon as above: Consumers tend to give a higher rating than they actually think.
 							</p>
@@ -171,15 +171,15 @@
 							<p>
 								We visualize the trend of reviews amount of Health Care products per day from 2005 to 2013 as below.
 							</p>
-							<div id="Figure9" style="height: 300px; width: 100%;"></div>
+							<div id="Figure9" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<h3 id="sentiment">Trend of sentiment and key words</h3>
 							<p>
 								However, we will encounter similar problems as we mentioned before: The amount of reviews is only a numerical count which cannot reflect sentiment orientation of the popularity of the product. To get into the depth of trend of popularity, here we analyze the change of sentiment in reviews over years.
 							</p>
 							<div class="align-img">
-								<div id="title_img10">Trend of adjectives over years</div>
+								<div id="title_img10">Trend of Adjectives Over Years</div>
 								<img id="img10" width="93%" alt="Figure10_Word cloud of adjectives over years" src="images/Figure10_Word cloud of adjectives over years.png">
-								<div id="title_img11">Trend of bigrams over years</div>
+								<div id="title_img11">Trend of Bigrams Over Years</div>
 								<img id="img11" width="105%" alt="Figure11_Word cloud of bigrams over years" src="images/Figure11_Word cloud of bigrams over years.png">
 							</div>
 							<p>
@@ -188,7 +188,7 @@
 							<p>
 								What’s more, we find a phenomenon that 'heart rate' occurs frequently from 2010 to 2011, however, it disappears from top 10 key bigrams and is replaced by 'lose weight' after 2012. Interesting! It seems that people pay more attention to their appearance than before and they are more willing to buy health care products to build a slim figure.
 							</p>
-							<div id="Figure12" style="height: 300px; width: 100%;"></div>
+							<div id="Figure12" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<p>
 								Apparently, the score of Health & Personal Care products keep fluctuating violently in the previous several years, which may indicates that the people’s evaluation and attitude to Health Care products were various and unstable during this period. In addition, the sharp drop is clear to be seen in the late 2004. The remarkable fluctuation can still be seen during period from 2005 to 2009. After that, the fluctuation becomes slighter and it seems to go down below 4 during year 2013 and then keep fluctuating up and down within the smaller range from 3.95 to 4, which may be explained that people are more likely to think that Health Care products are generally good but with some small shortcomings.
 							</p>
@@ -196,21 +196,21 @@
 							<p>
 								Will the popularity of Health Care products be influenced by some specific date? To answer this question, let’s look at the time series decomposition of the data, which decomposes the data into a trend component, a seasonal component and a residual (noise component). Since the amount of reviews is too small before 2004 and the dataset seems not to contain the whole sales data in 2014, we only treat the 2004-2013 interval.
 							</p>
-							<div id="Figure13_1" style="height: 150px; width: 100%;"></div>
-							<div id="Figure13_2" style="height: 150px; width: 100%;"></div>
-							<div id="Figure13_3" style="height: 150px; width: 100%;"></div>
-							<div id="Figure13_4" style="height: 150px; width: 100%;"></div>
+							<div id="Figure13_1" class="graph-margin" style="height: 150px; width: 100%;"></div>
+							<div id="Figure13_2" class="graph-margin" style="height: 150px; width: 100%;"></div>
+							<div id="Figure13_3" class="graph-margin" style="height: 150px; width: 100%;"></div>
+							<div id="Figure13_4" class="graph-margin" style="height: 150px; width: 100%;"></div>
 							<p>
 								We can observe that there is a seasonal changing pattern of the number of reviews under the yearly growth. The seasonal component starts to grow from November, reaches its peaks around January and then drops, which is, surprisingly, in the Christmas season! It can be seen that special date, especially Christmas, does have an impact on the popularity of Health Care products. We infer that people tend to buy more Health Care products and send them as gifts, which significantly boost consumption. While after Christmas, the need for health care products gradually falls back.
 							</p>
 							<p>
 								So how does the Christmas season influence the popularity in detail? Let’s go into the deep analysis of Christmas season and see if there is any difference among review quantity, rating, key words and sentiment score compared to values of whole year.
 							</p>
-							<div id="Figure14" style="height: 300px; width: 100%;"></div>
+							<div id="Figure14" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<p>
 								For review quantity of Christmas season, we notice that after 2009, the number of reviews in Christmas season starts to be larger than year’s day average review number and the gap between them is becoming more and more huge as year goes by. We suppose it might because after 2009, with the invention and wide use of smartphones, people are handier to buy products in Amazon using their phones. Another reason might be that the price of Health Care products is always much cheaper online. Especially on Christmas Day, online stores may offer a really excellent discount and significantly boost the sales. Also, in order to celebrate Christmas, the most important day in the year, people may be willing to consume more Health Care product like nutritious food.
 							</p>
-							<div id="Figure15" style="height: 300px; width: 100%;"></div>
+							<div id="Figure15" class="graph-margin" style="height: 300px; width: 100%;"></div>
 							<p>
 								The line chart above compares the trend of average rating in Christmas season with that in whole year. During 2004-2009, the average rating in Christmas day fluctuate remarkably, which indicates that people in these year’s Christmas Day take a skeptical attitude toward the healthy product. Sometimes they give a high rating, while sometimes low. However, after 2009, they are more likely to give a good rating for Health Care product on Christmas Day, which probably because the quality of the products are improved under Amazon’s strong supervision.
 							</p>
