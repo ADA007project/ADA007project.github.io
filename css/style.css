@@ -310,6 +310,15 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(105, 105, 105, 0.5);
+  z-index: 11;
+}
 .fh5co-navigation .fh5co-cover .copy {
   position: relative;
   z-index: 12;
@@ -359,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 #fh5co-aside a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
 }
 #fh5co-aside a:hover {
   color: #fff;
@@ -384,14 +393,16 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
+  background-image: url("../images/background.jpg");
+  background-size: cover;
 }
 #fh5co-aside .featured, #fh5co-aside nav, #fh5co-aside .page-title {
   z-index: 12;
   position: absolute;
-  bottom: 0;
+  /* bottom: 0; */
   padding: 30px;
 }
+
 .single #fh5co-aside .featured, .single #fh5co-aside nav, .single #fh5co-aside .page-title {
   width: 100%;
   margin: 0 auto;
@@ -422,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 #fh5co-aside nav {
-  top: 0;
+  top: 25%;
   bottom: inherit !important;
 }
 .single #fh5co-aside nav {

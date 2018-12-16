@@ -312,6 +312,146 @@
 		};
 		$("#Figure6").CanvasJSChart(options_fig6);
 
+		// draw figure7
+		var options_fig7 = {
+			animationEnabled: true,
+			theme: "light2",
+			title:{
+				text: "Difference of rating and normalized score among each sub-category"
+			},
+			axisX:{
+				title:"scoretype",
+				titleFontSize: 12,
+			},
+			axisY: {
+				title: "score",
+				titleFontSize: 12,
+				includeZero: false
+			},
+			toolTip:{
+				shared:true
+			},  
+			legend:{
+				cursor:"pointer",
+				verticalAlign: "center",
+				horizontalAlign: "left",
+				// dockInsidePlotArea: true,
+				itemclick: toogleDataSeries
+			},
+			data: [{
+				type: "line",
+				showInLegend: true,
+				name: "Baby & Child Care",
+				markerType: "square",
+				color: "#F08080",
+				dataPoints: [
+					{ label: "rating", y: 4.2054834055 },
+					{ label: "review score", y: 4.2185386724}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Stationery & Party Supplies",
+				lineDashType: "square",
+				color: "#339CC1",
+				dataPoints: [
+					{ label: "rating", y: 4.1025681927 },
+					{ label: "review score", y: 4.2055299455}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Sports Nutrition",
+				lineDashType: "square",
+				color: "#8FBD45",
+				dataPoints: [
+					{ label: "rating", y: 4.2376497665 },
+					{ label: "review score", y: 4.1786229581}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Personal Care",
+				lineDashType: "square",
+				color: "#6C28C3",
+				dataPoints: [
+					{ label: "rating", y: 4.1025089296},
+					{ label: "review score", y: 4.0392535476}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Household Supplies",
+				lineDashType: "square",
+				color: "#ECAD5C",
+				dataPoints: [
+					{ label: "rating", y: 4.1924941364},
+					{ label: "review score", y: 4.0374206397}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "default",
+				lineDashType: "square",
+				color: "#C6EAF8",
+				dataPoints: [
+					{ label: "rating", y: 4.0190772708},
+					{ label: "review score", y: 3.9813564312}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Sexual Wellness",
+				lineDashType: "square",
+				color: "#062C3B",
+				dataPoints: [
+					{ label: "rating", y: 3.6948595705},
+					{ label: "review score", y: 3.9728679103}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Medical Supplies & Equipment",
+				lineDashType: "square",
+				color: "#CD176F",
+				dataPoints: [
+					{ label: "rating", y: 4.0719347174},
+					{ label: "review score", y: 3.9708776812}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Health Care",
+				lineDashType: "square",
+				color: "#F02030",
+				dataPoints: [
+					{ label: "rating", y: 4.1270087484},
+					{ label: "review score", y: 3.9162227574}
+				]
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Vitamins & Dietary Supplements",
+				lineDashType: "square",
+				color: "#F07F20",
+				dataPoints: [
+					{ label: "rating", y: 4.123548889},
+					{ label: "review score", y: 3.9161966042}
+				]
+			}
+		]
+		}
+		$("#Figure7").CanvasJSChart(options_fig7);
+
 		// draw figure9
 		var fig9_points = addData9(rating_quantity_month)
 		var options_fig9 =  {
