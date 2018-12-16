@@ -209,7 +209,7 @@
 			},
 			axisY: {
 				title: "counts",
-				titleFontSize: 24,
+				titleFontSize: 12,
 				includeZero: true
 			},
 			data: [{
@@ -231,7 +231,7 @@
 			},
 			axisY: {
 				title: "counts",
-				titleFontSize: 24,
+				titleFontSize: 12,
 				includeZero: false
 			},
 			data: [{
@@ -249,30 +249,9 @@
 		var fig13_points_3 = addData13(trend_13,data_x_13)
 		var fig13_points_4 = addData13(residual_13,data_x_13)
 
-		// var options_fig13_1 =  {
-		// 	animationEnabled: true,
-		// 	theme: "light2",
-		// 	title: {
-		// 		text: "Seasonal Decomposition -Original Time Series Figure"
-		// 	},
-		// 	axisX: {
-		// 		title:"Year"
-		// 	},
-		// 	axisY: {
-		// 		title: "Original",
-		// 		titleFontSize: 24,
-		// 		includeZero: true
-		// 	},
-		// 	data: [{
-		// 		type: "spline", 
-		// 		xValueType: "dateTime",
-		// 		dataPoints: fig13_points_1
-		// 	}]
-		// };
-
-		// $("#Figure13_1").CanvasJSChart(options_fig13_1);
-		var chart = new CanvasJS.Chart("Figure13_1", {
-			height:200,
+		
+		var chart13_1 = new CanvasJS.Chart("Figure13_1", {
+			height:150,
 			animationEnabled: true,
 			theme: "light2",
 			title: {
@@ -283,7 +262,7 @@
 			},
 			axisY: {
 				title: "Original",
-				titleFontSize: 24,
+				titleFontSize: 12,
 				includeZero: false,
 				maximum:6000,
 				interval:2000
@@ -295,9 +274,11 @@
 			}]
 		  });
 	  
-		  chart.render();
+		  chart13_1.render();
 
-		var options_fig13_2 =  {
+		
+		var chart13_2 = new CanvasJS.Chart("Figure13_2", {
+			height:150,
 			animationEnabled: true,
 			theme: "light2",
 			title: {
@@ -308,19 +289,23 @@
 			},
 			axisY: {
 				title: "Trend",
-				titleFontSize: 24,
-				includeZero: true
+				titleFontSize: 12,
+				includeZero: true,
+				// maximum:400
+				
 			},
 			data: [{
 				type: "spline", 
 				xValueType: "dateTime",
 				dataPoints: fig13_points_2
 			}]
-		};
+		  });
+	  
+		  chart13_2.render();
 
-		$("#Figure13_2").CanvasJSChart(options_fig13_2);
-
-		var options_fig13_3 =  {
+		
+		var chart13_3 = new CanvasJS.Chart("Figure13_3", {
+			height:150,
 			animationEnabled: true,
 			theme: "light2",
 			title: {
@@ -330,40 +315,49 @@
 				title:"Year"
 			},
 			axisY: {
-				title: "counts",
-				titleFontSize: 24,
-				includeZero: true
+				title: "Seasonal",
+				titleFontSize: 12,
+				includeZero: true,
+				maximum:3000,
+				interval:1000
+				
 			},
 			data: [{
 				type: "spline", 
 				xValueType: "dateTime",
 				dataPoints: fig13_points_3
 			}]
-		};
+		  });
+	  
+		  chart13_3.render();
 
-		$("#Figure13_3").CanvasJSChart(options_fig13_3);
-
-		var options_fig13_4 =  {
+		
+		var chart13_4 = new CanvasJS.Chart("Figure13_4", {
+			height:150,
 			animationEnabled: true,
 			theme: "light2",
 			title: {
-				text: "Seasonal Decomposition -Residual Figure"
+				text: "Seasonal Decomposition -Seasonal Component Figure"
 			},
 			axisX: {
 				title:"Year"
 			},
 			axisY: {
 				title: "Residual",
-				titleFontSize: 24,
-				includeZero: true
+				titleFontSize: 12,
+				includeZero: true,
+				maximum:2000,
+				interval:1000
+				
 			},
 			data: [{
 				type: "spline", 
 				xValueType: "dateTime",
 				dataPoints: fig13_points_4
 			}]
-		};
-		$("#Figure13_4").CanvasJSChart(options_fig13_4);
+		  });
+	  
+		  chart13_4.render();
 
 		//draw figure14
 		var fig14_points_1 = addData14(christ_quantity_14)
@@ -381,7 +375,7 @@
 			},
 			axisY: {
 				title: "quantity",
-				titleFontSize: 24,
+				titleFontSize: 12,
 				includeZero: true
 			},
 			toolTip:{
@@ -429,7 +423,7 @@
 			},
 			axisY: {
 				title: "rating",
-				titleFontSize: 24,
+				titleFontSize: 12,
 				includeZero: false
 			},
 			toolTip:{
