@@ -110,30 +110,359 @@
 		}
 	};
 
-
+	function toogleDataSeries(e){
+		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		} else{
+			e.dataSeries.visible = true;
+		}
+		e.chart.render();
+	}
+	
+	function addData1(data) {
+		var fig1_points = [];
+		$.each( data[0].quantity, function( key, val ) {
+			fig1_points.push({
+				label: key,
+				y: val
+			});
+		});
+		return fig1_points;
+	}
+	function addData9(data) {
+		var fig9_points = [];
+		var reviewtime=[]
+		var overall=[]
+		$.each( data[0].ReviewTime, function( key, val ) {
+			reviewtime.push(new Date(val));
+		});
+		$.each( data[0].overall, function( key, val ) {
+			overall.push(val);
+		});
+		for (var i = 0; i < reviewtime.length; i++) {
+			fig9_points.push({
+				x: reviewtime[i],
+				y: overall[i]
+			});
+		
+		};
+		return fig9_points;
+	}
+	function addData_x_13(x_data){
+		var data_x=[]
+		$.each( x_data[0].ReviewTime, function( key, val ) {
+			data_x.push(new Date(val));
+		});
+		return data_x;
+	}
+	function addData13(data,data_x) {
+		var fig13_points=[];
+		var data_y=[]
+		$.each( data[0], function( key, val ) {
+			data_y.push(val);
+		});
+		for (var i = 0; i < data_x.length; i++) {
+			fig13_points.push({
+				x: data_x[i],
+				y: data_y[i]
+			});
+		};
+		return fig13_points;
+	}
+	function addData14(data) {
+		var fig14_points=[];
+		$.each( data[0].review_quantity, function( key, val ) {
+			fig14_points.push({
+				x: parseInt(key),
+				y: val
+			});
+		});
+		return fig14_points;
+	}
+	function addData15(data) {
+		var fig15_points=[];
+		$.each( data[0].overall, function( key, val ) {
+			fig15_points.push({
+				x: parseInt(key),
+				y: val
+			});
+		});
+		return fig15_points;
+	}
+	
 	$(function(){
 		contentWayPoint();
 		
 		goToTop();
 		loaderPage();
 		parallax();
+		// draw figure1
+		var fig1_points = addData1(rating_quantity)
+		var options_fig1 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Rating Quantity"
+			},
+			axisX: {
+				title:"rating"
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 24,
+				includeZero: true
+			},
+			data: [{
+				type: "column", 
+				dataPoints: fig1_points
+			}]
+		};
+		$("#Figure1").CanvasJSChart(options_fig1);
+		// draw figure9
+		var fig9_points = addData9(rating_quantity_month)
+		var options_fig9 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "review_quantity_through_months"
+			},
+			axisX: {
+				title:"rating"
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 24,
+				includeZero: false
+			},
+			data: [{
+				type: "spline", 
+				xValueType: "dateTime",
+				dataPoints: fig9_points
+			}]
+		};
+		$("#Figure9").CanvasJSChart(options_fig9);
 
-		// var ctxP = document.getElementById("pieChart").getContext('2d');
-		// var myPieChart = new Chart(ctxP, {
-		// 	type: 'pie',
-		// 	data: {
-		// 	labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
-		// 	datasets: [{
-		// 		data: [300, 50, 100, 40, 120],
-		// 		backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-		// 		hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
-		// 	}]
+		// draw graph 13
+		var data_x_13 = addData_x_13(seasonal_x)
+		var fig13_points_1 = addData13(observed_13,data_x_13)
+		var fig13_points_2 = addData13(seasonal_13,data_x_13)
+		var fig13_points_3 = addData13(trend_13,data_x_13)
+		var fig13_points_4 = addData13(residual_13,data_x_13)
+
+		// var options_fig13_1 =  {
+		// 	animationEnabled: true,
+		// 	theme: "light2",
+		// 	title: {
+		// 		text: "Seasonal Decomposition -Original Time Series Figure"
 		// 	},
-		// 	options: {
-		// 	responsive: true
-		// 	}
-		// });
-	});
+		// 	axisX: {
+		// 		title:"Year"
+		// 	},
+		// 	axisY: {
+		// 		title: "Original",
+		// 		titleFontSize: 24,
+		// 		includeZero: true
+		// 	},
+		// 	data: [{
+		// 		type: "spline", 
+		// 		xValueType: "dateTime",
+		// 		dataPoints: fig13_points_1
+		// 	}]
+		// };
 
+		// $("#Figure13_1").CanvasJSChart(options_fig13_1);
+		var chart = new CanvasJS.Chart("Figure13_1", {
+			height:200,
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Seasonal Decomposition -Original Time Series Figure"
+			},
+			axisX: {
+				title:"Year"
+			},
+			axisY: {
+				title: "Original",
+				titleFontSize: 24,
+				includeZero: false,
+				maximum:6000,
+				interval:2000
+			},
+			data: [{
+				type: "spline", 
+				xValueType: "dateTime",
+				dataPoints: fig13_points_1
+			}]
+		  });
+	  
+		  chart.render();
+
+		var options_fig13_2 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Seasonal Decomposition -Trend Component Figure"
+			},
+			axisX: {
+				title:"Year"
+			},
+			axisY: {
+				title: "Trend",
+				titleFontSize: 24,
+				includeZero: true
+			},
+			data: [{
+				type: "spline", 
+				xValueType: "dateTime",
+				dataPoints: fig13_points_2
+			}]
+		};
+
+		$("#Figure13_2").CanvasJSChart(options_fig13_2);
+
+		var options_fig13_3 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Seasonal Decomposition -Seasonal Component Figure"
+			},
+			axisX: {
+				title:"Year"
+			},
+			axisY: {
+				title: "counts",
+				titleFontSize: 24,
+				includeZero: true
+			},
+			data: [{
+				type: "spline", 
+				xValueType: "dateTime",
+				dataPoints: fig13_points_3
+			}]
+		};
+
+		$("#Figure13_3").CanvasJSChart(options_fig13_3);
+
+		var options_fig13_4 =  {
+			animationEnabled: true,
+			theme: "light2",
+			title: {
+				text: "Seasonal Decomposition -Residual Figure"
+			},
+			axisX: {
+				title:"Year"
+			},
+			axisY: {
+				title: "Residual",
+				titleFontSize: 24,
+				includeZero: true
+			},
+			data: [{
+				type: "spline", 
+				xValueType: "dateTime",
+				dataPoints: fig13_points_4
+			}]
+		};
+		$("#Figure13_4").CanvasJSChart(options_fig13_4);
+
+		//draw figure14
+		var fig14_points_1 = addData14(christ_quantity_14)
+		var fig14_points_2 = addData14(christ_quantity_avg_year_14)
+		
+		var options_fig14 = {
+			animationEnabled: true,
+			theme: "light2",
+			title:{
+				text: "Christmas quantity average"
+			},
+			axisX:{
+				title:"year",
+				valueFormatString:"####"
+			},
+			axisY: {
+				title: "quantity",
+				titleFontSize: 24,
+				includeZero: true
+			},
+			toolTip:{
+				shared:true
+			},  
+			legend:{
+				cursor:"pointer",
+				verticalAlign: "top",
+				horizontalAlign: "left",
+				dockInsidePlotArea: true,
+				itemclick: toogleDataSeries
+			},
+			data: [{
+				type: "line",
+				showInLegend: true,
+				name: "Christmas reviews quantity",
+				markerType: "square",
+				color: "#F08080",
+				dataPoints: fig14_points_1
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Year average quantity",
+				lineDashType: "dash",
+				dataPoints: fig14_points_2
+			}]
+		};
+		
+		$("#Figure14").CanvasJSChart(options_fig14);
+
+		// draw graph 15
+		var fig15_points_1 = addData15(christ_rating_15)
+		var fig15_points_2 = addData15(christ_rating_year_15)
+		
+		var options_fig15 = {
+			animationEnabled: true,
+			theme: "light2",
+			title:{
+				text: "Christmas rating average"
+			},
+			axisX:{
+				title:"year",
+				valueFormatString:"####"
+			},
+			axisY: {
+				title: "rating",
+				titleFontSize: 24,
+				includeZero: false
+			},
+			toolTip:{
+				shared:true
+			},  
+			legend:{
+				cursor:"pointer",
+				verticalAlign: "bottom",
+				horizontalAlign: "left",
+				dockInsidePlotArea: true,
+				itemclick: toogleDataSeries
+			},
+			data: [{
+				type: "line",
+				showInLegend: true,
+				name: "Christmas reviews rating",
+				markerType: "square",
+				color: "#F08080",
+				dataPoints: fig15_points_1
+			},
+			{
+				type: "line",
+				showInLegend: true,
+				name: "Year average rating",
+				lineDashType: "dash",
+				dataPoints: fig15_points_2
+			}]
+		};
+		
+		$("#Figure15").CanvasJSChart(options_fig15);
+
+		
+
+	});
 
 }());
